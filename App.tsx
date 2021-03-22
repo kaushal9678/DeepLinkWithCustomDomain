@@ -56,9 +56,10 @@ axios.defaults.baseURL =
       // custom setup dependant on URL...
     }
   }
+  //
   return (
     <Provider store={store}>
-      <Navigation ref={navigationRef} colorScheme={'light'} uriPrefixe={linking.prefixes} linking={linking} />
+      <Navigation ref={navigationRef}  colorScheme={'light'} uriPrefixe={linking.prefixes} linking={linking} />
     </Provider>
   );
 };

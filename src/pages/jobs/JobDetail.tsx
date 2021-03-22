@@ -29,7 +29,7 @@ const JobDetail = ({ scream, getScream, navigation, route }:
 
     console.log("route in joobDetail==", route);
     const { screamId } = route.params;
-    //console.log("scream==", screamId);
+    console.log("scream==", screamId);
     const [like, setLike] = useState(0)
     useEffect(() => {
         getScream(screamId)

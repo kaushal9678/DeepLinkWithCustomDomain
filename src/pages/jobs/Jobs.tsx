@@ -4,7 +4,7 @@ import { getScreams } from '../../redux/actions/dataActions';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { GET_SCREAMS } from '../../redux/actions';
-
+import * as RootNavigation from '../../navigation/RootNavigaton'
 import { Card, Title, Paragraph, Avatar, Button, Text, IconButton, Colors } from 'react-native-paper';
 import { IJobs, Scream } from '../../interface/IInterface';
 type CardsScreenProps = {};
@@ -45,6 +45,7 @@ const Jobs: FunctionComponent<IJobs> = (
     const [like, setLike] = useState(0)
     useEffect(() => {
         getAllScreams()
+      
         return () => {
 
         }
@@ -58,7 +59,12 @@ const Jobs: FunctionComponent<IJobs> = (
         const date = item.createdAt
         const timeAgo = moment(item.createdAt).fromNow();
        // console.log('scream==',item);
-        return <Card key={item.screamId} style={{ margin: 10, borderRadius: 5 }} onPress={() => navigation.navigate('JobDetail', { screamId: item.screamId })}>
+        return <Card key={item.screamId} style={{ margin: 10, borderRadius: 5 }} onPress={() => {
+        //navigation.navigate('JobDetail', { screamId: item.screamId })
+        console.log("roootNavigation==",RootNavigation);
+        RootNavigation.navigate('JobDetail', { screamId: item.screamId })
+    }
+        }>
             <Card.Content style={{ flexDirection: 'column' }}>
                 <Card.Content style={{ flexDirection: 'row' }}>
                     <Avatar.Image size={50} source={{ uri: item.userImage }} />

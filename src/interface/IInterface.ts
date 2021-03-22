@@ -20,6 +20,7 @@ export interface Scream {
 export interface INavigationContainer{
     uriPrefixe:string[],
     linking:LinkingOptions
-    ref:any
+    ref: any
+    isReadyRef?:any
     colorScheme:ColorSchemeName
 }
