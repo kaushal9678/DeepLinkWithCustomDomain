@@ -4,9 +4,11 @@ import { Text } from "react-native";
 import { Provider } from "react-redux";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-
-const DynamicLinksHandle: FunctionComponent = (props) => {
-   console.log("props DynamicLinksHandle: ",props)
+interface IDynamicHandle{
+url:string;
+}
+const DynamicLinksHandle: FunctionComponent<IDynamicHandle> = (props) => {
+  
    const handleDynamicLink = link => {
     // Handle dynamic link inside your own application
    // alert(JSON.stringify(link.url));
@@ -19,6 +21,7 @@ const DynamicLinksHandle: FunctionComponent = (props) => {
 
 
   useEffect(() => {
+    console.log("props DynamicLinksHandle: ",props)
 //    const unsubscribeForeGround = dynamicLinks().onLink(handleDynamicLink);
     // dynamicLinks().getInitialLink().then(link=>alert(link.url));
     // When the component is unmounted, remove the listener

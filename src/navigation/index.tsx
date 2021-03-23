@@ -47,8 +47,9 @@ const ThemeLight = {
       
         if (url.includes('/users')) {
           console.log("url includes called==");
-          Linking.openURL('deeplink://users/cEogXfUy7VgiKZCxCO3n')
-          //RootNavigation.navigate('JobDetail',{screamId:'cEogXfUy7VgiKZCxCO3n'})
+        
+          //Linking.openURL('deeplink://users/cEogXfUy7VgiKZCxCO3n')
+          RootNavigation.navigate('JobDetail',{screamId:'cEogXfUy7VgiKZCxCO3n'})
       }
     }
     });
@@ -70,8 +71,8 @@ const ThemeLight = {
     return () => {
       Linking.removeEventListener('url', handleUrl);
     }
-  }
-
+  },
+[]
   );
 
   return (
@@ -84,6 +85,7 @@ const ThemeLight = {
 
     >
       <RootNavigator />
+      <DynamicLinksHandle url={'https://www.kyadav.tech'}/>
      
     </NavigationContainer>
 
